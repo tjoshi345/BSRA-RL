@@ -31,4 +31,9 @@ def view_model(model: mujoco.MjModel, control: float = 0.0, seconds: float = 10.
                 time.sleep(max(0, model.opt.timestep - (time.monotonic() - start)))
     finally:
         for thread in set(threading.enumerate()) - existing_threads:
-            thread.join()
+            if thread is threading.main_thread():
+                continue
+            try:
+                thread.join(timeout=2)
+            except (AssertionError, RuntimeError):
+                pass  # dummy/foreign thread, cannot be joined
