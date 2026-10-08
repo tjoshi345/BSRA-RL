@@ -25,7 +25,7 @@ To display an image, add `!`: `![Model screenshot](../results/model.png)`.
 ## Model and task
 
 ### Model (Stage 2)
-
+git diff origin/main origin/onboarding
 - Which tool loads `scene.xml` and its included `cartpole.xml`, and what does it
   create from them? Point to the loading call in `scripts/view_model.py`. Which
   tool computes the motion you see in the viewer when a control is applied? **TODO**
