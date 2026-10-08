@@ -14,13 +14,13 @@ To display an image, add `!`: `![Model screenshot](../results/model.png)`.
 
 ## Setup
 
-- Member: **TODO**
-- OS: **TODO**
-- Setup diagnostic, viewer, and RGB results; any fix needed: **TODO**
-- Fork URL and working branch: **TODO**
+- Member: **Twisha**
+- OS: **MacOS**
+- Setup diagnostic, viewer, and RGB results; any fix needed: **Needed to change a few lines at the end of viewer.py after finally: to skip any threads that couldn't be recognized**
+- Fork URL and working branch: **Not too many issues**
 - Before starting, read the [toolchain overview](../resources/toolchain.md).
   What role does each of MuJoCo, Gymnasium, Stable-Baselines3, and TensorBoard
-  play in this exercise? Describe how they work together in your own words: **TODO**
+  play in this exercise? Describe how they work together in your own words: **MuJoCo simulates the environment for the agent and can provide a visual for the viewer; Gymnasium defines the abilities, rewards, and overall setup for the agent to train with; SB3 handles all of the loops and how the agent trains and improves using the rewards; and TensorBoard shows you all of the training data**
 
 ## Model and task
 
