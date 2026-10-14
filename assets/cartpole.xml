@@ -7,11 +7,11 @@
 	<body name="cart" pos="0 0 0.20">
 		<geom name="cart_geom" type="box" size="0.30 0.20 0.16" mass="10"/>
 		<joint name="slider" type="slide" axis="1 0 0" limited="true" range="-1.25 1.25" damping="1"/>
-	<body/>
-	<body name="pole" pos="0 0 0.08"
+	</body>
+	<body name="pole" pos="0 0 0.08">
 		<geom name="pole_geom" type="capsule" fromto="0 0 0 0 0 0.75" size="0.04" mass="5"/>
-		<joint name="hinge" type="hinge" limited="true" axis="-90 90" damping="1"/>
-	<body/>
+		<joint name="hinge" type="hinge" axis="0 1 0" limited="true" range="-90 90" damping="1"/>
+	</body>
   </worldbody>
   <actuator>
     <!-- MEMBER TODO 2.2: Add cart_motor on slider. Set the control limit
