@@ -88,13 +88,13 @@ Keep the saved policy, TensorBoard logs, and rollout video locally and share the
 directly with the RL lead if requested. No file uploads, download links, or GitHub
 release are required for these files.
 
-- Automated test results: **TODO**
-- Manual model/render/video checks: **TODO**
+- Automated test results: **17 passed 1 warning**
+- Manual model/render/video checks: **4 passed**
 - Fork PR link and review notes (record merge in the PR): **TODO**
 
 ## Feedback
 
 - Did you learn anything from this onboarding? What was new, or what became
-  clearer? If little was new, say so: **TODO**
+  clearer? If little was new, say so: **before I used unity to simulate everything so it was different but also kind of similar using mujoco**
 - What improvements would make the onboarding easier to follow or more useful?
-  Mention any confusing instructions, missing background, or unnecessary work: **TODO**
+  Mention any confusing instructions, missing background, or unnecessary work: **i feel like it was pretty informative**
