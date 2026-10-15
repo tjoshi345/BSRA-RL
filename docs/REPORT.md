@@ -41,13 +41,13 @@ setting that supports your answer, and distinguish MuJoCo's role from Gymnasium'
 
 | Topic        | Question                                                                                                                                                | Your answer |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Observations | What are the four values returned to the policy, in order and with units? Where do those values come from, and how does `_get_obs()` assemble them?     | **TODO**    |
-| Actions      | What does the action control, what is its allowed range, and how does it reach the motor?                                                               | **TODO**    |
-| Physics      | Which tool computes motion from your XML model, and how does Gymnasium ask it to advance? How much simulated time passes per action?                    | **TODO**    |
-| Reset        | What does `reset_model()` change at the start of an episode? How are the starting values randomized, and what does using the same reset seed reproduce? | **TODO**    |
-| Reward       | What is the exact reward rule, which code computes it, and does it use the state before or after the action?                                            | **TODO**    |
+| Observations | What are the four values returned to the policy, in order and with units? Where do those values come from, and how does `_get_obs()` assemble them?     | **it takes the cart position (m), pole position (radians), cart velocity (m/s), and pole velocity (rad/s). it comes from the array returned in the _get_obs method**    |
+| Actions      | What does the action control, what is its allowed range, and how does it reach the motor?                                                               | **action controls the force applied to the cart and its range is -3 to 3. it reaches the motor through ctrl/data.ctrl which is connectred to the actuator**    |
+| Physics      | Which tool computes motion from your XML model, and how does Gymnasium ask it to advance? How much simulated time passes per action?                    | **Mujoco computes the motion and it uses step() to advance. 0.04 seconds pass, it takes 0.02 from the scene xml and multiplies it by 2**    |
+| Reset        | What does `reset_model()` change at the start of an episode? How are the starting values randomized, and what does using the same reset seed reproduce? | **it resets the setup and then randomizes by how much it'll move the pole to put the setup into motion. in the reset_model method it adds a random number to the positions and velocities using np_random.uniform. using the same reset seed starts it the same every time**    |
+| Reward       | What is the exact reward rule, which code computes it, and does it use the state before or after the action?                                            | **+1 is given for reach timestep that the pole is upright and it is comptated in step(). it uses the state after**    |
 
-- Environment test and random-rollout results; action-range warning: **TODO**
+- Environment test and random-rollout results; action-range warning: **passed the 11 tests and got one warning**
 
 ## Training
 
