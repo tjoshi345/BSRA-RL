@@ -75,13 +75,13 @@ def train(run_name: str, seed: int = 0, total_timesteps: int = 100_000, smoke: b
         # MEMBER TODO 4.1: Construct model a MLP PPO policy using SB3 
         # Pass device="cpu", seed=seed, tensorboard_log=str(log_dir), verbose=0, and **settings. The monitored environment is supplied.
         model = PPO(
-	    "MlpPolicy",
-	    env,
-	    device="cpu",
+            "MlpPolicy",
+            env,
+            device="cpu",
             seed=seed,
-	    tensorboard_log=str(log_dir),
-	    verbose=0,
-	    **settings
+            tensorboard_log=str(log_dir),
+            verbose=0,
+            **settings
         )
         # raise NotImplementedError("Section 4: construct PPO")
 
