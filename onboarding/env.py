@@ -18,15 +18,15 @@ def make_env(render_mode: str | None = None, max_episode_steps: int = MAX_EPISOD
     # All of these values are provided through existing variables or function inputs
     # Set width=640, height=480, and camera_name="side" for consistent videos.
     # Gymnasium supplies the reward/reset rules and adds the TimeLimit wrapper.
-	return gym.make(
-		"InvertedPendulum-v5",
-		xml_file=str(SCENE),
-		frame_skip=FRAME_skip,
-		reset_noise_scale=RESET_NOISE,
-		max_episode_steps=max_episode_steps,
-		render_mode=render_mode,
-		width=640,
-		height=480,
-		camera_name="side"
-	)
+    return gym.make(
+        "InvertedPendulum-v5",
+	xml_file=str(SCENE),
+	frame_skip=FRAME_SKIP,	
+	reset_noise_scale=RESET_NOISE,
+	max_episode_steps=max_episode_steps,
+	render_mode=render_mode,
+	width=640,
+	height=480,
+	camera_name="side"
+    )
     raise NotImplementedError("Section 3: connect the custom scene to Gymnasium")
