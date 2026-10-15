@@ -28,10 +28,10 @@ To display an image, add `!`: `![Model screenshot](../results/model.png)`.
 git diff origin/main origin/onboarding
 - Which tool loads `scene.xml` and its included `cartpole.xml`, and what does it
   create from them? Point to the loading call in `scripts/view_model.py`. Which
-  tool computes the motion you see in the viewer when a control is applied? **TODO**
+  tool computes the motion you see in the viewer when a control is applied? **Mujoco is used to load scene and it creates a model using them. 'model = mujoco.MjModel.from_xml_path(str(args.xml.resolve()))'**
 - Which XML file owns the mechanism, and how does the include connect it to the
   scene? Explain the slide/hinge axes, unactuated pole, box half-extents, and
-  degrees versus radians. Link a small model screenshot (`../results/model.png`): **TODO**
+  degrees versus radians. Link a small model screenshot (`../results/model.png`): **cartpole has all of the mechanisms in it, and it is connected to the scene xml through the include line. axis describes the motion of the item, x y z, so the slider moves in the x direction and the hinge moves in the y direction. the unacuated pole means that it doesnt have anything acting on it to move, so it'll only move if something hits it. the box size is half the length so you need to divide the values by half. you have to make sure you set it to degress because mujoco defaults to radians.**
 
 ### Environment (Stage 3)
 
