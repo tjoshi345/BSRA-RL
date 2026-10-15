@@ -24,7 +24,8 @@ VIDEO_SEED = EVALUATION_SEEDS[0]
 def load_policy(path: str | Path) -> PPO:
     """Load on CPU without resuming training."""
     # MEMBER TODO 5.1: Return PPO.load(path, ...) on the CPU.
-    raise NotImplementedError("Section 5: load the saved PPO policy")
+    return PPO.load(path, device="cpu")
+    # raise NotImplementedError("Section 5: load the saved PPO policy")
 
 
 def choose_action(env: gym.Env, observation: NDArray[np.float64], policy: PPO | None) -> NDArray[np.float32]:
@@ -32,7 +33,9 @@ def choose_action(env: gym.Env, observation: NDArray[np.float64], policy: PPO | 
         return env.action_space.sample()
     # MEMBER TODO 5.2: Predict with deterministic=True; return only the action.
     # SB3 predict returns (action, state). No learn() call belongs here.
-    raise NotImplementedError("Section 5: choose a deterministic policy action")
+    action, _ = policy.predict(observation, deterministic=True)
+    return action
+    # raise NotImplementedError("Section 5: choose a deterministic policy action")
 
 
 def run_episode(env: gym.Env, seed: int, policy: PPO | None = None, video_path: Path | None = None, trace: bool = False) -> dict[str, Any]:
