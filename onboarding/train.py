@@ -92,7 +92,7 @@ def train(run_name: str, seed: int = 0, total_timesteps: int = 100_000, smoke: b
 
         policy_path.parent.mkdir(parents=True, exist_ok=True)
         # MEMBER TODO 4.3: Save model to policy_path.
-        model.save("policy_path")
+        model.save(policy_path)
 
         # raise NotImplementedError("Section 4: save the trained policy")
 
