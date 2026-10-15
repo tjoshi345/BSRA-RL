@@ -78,7 +78,7 @@ def train(run_name: str, seed: int = 0, total_timesteps: int = 100_000, smoke: b
 	    "MlpPolicy",
 	    env,
 	    device="cpu",
-	    seed=seed,
+            seed=seed,
 	    tensorboard_log=str(log_dir),
 	    verbose=0,
 	    **settings
