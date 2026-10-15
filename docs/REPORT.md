@@ -68,16 +68,16 @@ Use reset seeds 10000–10019, deterministic PPO actions, and random action seed
 
 | Agent | Episodes | Return mean ± std | Length mean ± std | Time-limit fraction |
 | --- | --- | --- | --- | --- |
-| Random | TODO | TODO | TODO | TODO |
-| PPO | TODO | TODO | TODO | TODO |
+| Random | 20 | 4.8 ± 2.6570660511172846 | 5.8 ± 2.6570660511172846 | 0.0 |
+| PPO | 20 | 1000.0 ± 0.0 | 1000.0 ± 0.0 | 1.0 |
 
-- Per-episode CSV and summary JSON: **TODO** links
-- Predetermined PPO rollout (seed 10000): **TODO** briefly describe the behavior you observed
-- Limitation or failure, and a specific diagnosis if learning was weak: **TODO**
+- Per-episode CSV and summary JSON: **csv: /BSRA-RL/results/first-run/episodes.csv json: /BSRA-RL/results/first-run/summary.json** links
+- Predetermined PPO rollout (seed 10000): **the pole wobbled a little but then didn't move** briefly describe the behavior you observed
+- Limitation or failure, and a specific diagnosis if learning was weak: **I think the learning was fine**
 
 - Why does this evaluation differ from a training curve, and what can one
   trained seed not establish? What carries over to humanoid soccer, and what is
-  missing (for example, contacts, partial observations, or sim-to-real transfer)? **TODO**
+  missing (for example, contacts, partial observations, or sim-to-real transfer)? **one trained seed cannot account for random exceptions so you would need for it to go through a lot more training and random events so that it can learn and gain more experience**
 
 ## Review
 
