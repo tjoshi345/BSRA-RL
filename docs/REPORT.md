@@ -51,15 +51,15 @@ setting that supports your answer, and distinguish MuJoCo's role from Gymnasium'
 
 ## Training
 
-- Run name / source commit / training seed: **TODO**
-- Requested and actual steps / elapsed time / device: **TODO**
-- Configuration and versions: **TODO** link `../results/<run>/run.json`
-- Learning curve: **TODO** embed `../results/<run>/learning-curve.png`
+- Run name / source commit / training seed: **first-run / 81d2daf4e422b161ab83c9996c237e0b6c4a0875 / 0**
+- Requested and actual steps / elapsed time / device: **100000 and 100352 / 27.78760958299972 / cpu**
+- Configuration and versions: **/BSRA-RL/results/first-run/run.json** link `../results/<run>/run.json`
+- Learning curve: **/BSRA-RL/results/first-run/learning-curve.png** embed `../results/<run>/learning-curve.png`
 
 - What do SB3, PyTorch, and `Monitor` each do here? How does SB3 use the environment
-  and settings you pass to PPO? **TODO**
+  and settings you pass to PPO? **sb3 helps create the ppo, pytorch has the logic to build the ppo, and monitor summarizes the results**
 - What do the curve's axes, averaging, and smoothing mean, and what evidence of
-  improvement, variability, or a plateau do you see? **TODO**
+  improvement, variability, or a plateau do you see? **the x axis is timesteps, the y axis is average reward per episode, the smoothing affects the graph. the graph became steeper and more consistent.**
 
 ## Evaluation
 
