@@ -74,14 +74,27 @@ def train(run_name: str, seed: int = 0, total_timesteps: int = 100_000, smoke: b
     try:
         # MEMBER TODO 4.1: Construct model a MLP PPO policy using SB3 
         # Pass device="cpu", seed=seed, tensorboard_log=str(log_dir), verbose=0, and **settings. The monitored environment is supplied.
-        raise NotImplementedError("Section 4: construct PPO")
+	model = PPO(
+		"MlpPolicy",
+		env,
+		device="cpu",
+		seed=seed,
+		tensorboard_log=str(log_dir),
+		verbose=0,
+		**settings
+	)
+        # raise NotImplementedError("Section 4: construct PPO")
 
         # MEMBER TODO 4.2: Train for total_timesteps with tb_log_name="ppo".
-        raise NotImplementedError("Section 4: learn from the environment")
+	model.learn(total_timesteps=total_timesteps, tb_log_name="ppo")
+
+        # raise NotImplementedError("Section 4: learn from the environment")
 
         policy_path.parent.mkdir(parents=True, exist_ok=True)
         # MEMBER TODO 4.3: Save model to policy_path.
-        raise NotImplementedError("Section 4: save the trained policy")
+	model.save("policy_path")
+
+        # raise NotImplementedError("Section 4: save the trained policy")
 
         elapsed = time.perf_counter() - start
         results.mkdir(parents=True, exist_ok=True)
